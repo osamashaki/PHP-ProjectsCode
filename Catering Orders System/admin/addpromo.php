@@ -181,8 +181,8 @@ else
         <td height="30" colspan="2" valign="middle" bgcolor="#FFFFFF"><p>&nbsp;</p>
           <div align="center" class="style3">
           <p>Ordering Restaurant Catering Online</p>
-          <p> All Rights Reserved &copy; 2015 Ordering Restaurant Catering Online </p>
-          </div></td>
+          <p> All Rights Reserved &copy; 2013 Ordering Restaurant Catering Online </p>
+        </div></td>
       </tr>
 </table>
 </body>

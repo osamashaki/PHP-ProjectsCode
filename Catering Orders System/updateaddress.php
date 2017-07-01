@@ -21,7 +21,7 @@ $id=$_SESSION["userid"];
 							{
 								include("connected.php");
 								$address = $_POST['address']; 
-								$query = "update user set  address = '$address' where '$id' ";
+								$query = "update user set  address = '$address' where id = '$id' ";
 								$result = mysql_query($query);
 								//mysql_query("update user set address = '$address' where id = '$id'");
 								echo "<br/><center><font color='red'><b>Your address has been updated.</b></font><br/><br/>";

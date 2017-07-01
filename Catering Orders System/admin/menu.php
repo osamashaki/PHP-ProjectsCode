@@ -9,7 +9,7 @@ include("../connected.php");
 
 if(isset($_POST['submit']))
 {
-		$query = "SELECT * FROM menu ";
+		$query = "SELECT * FROM menu";
 		$result = mysql_query($query);
 		while($row = mysql_fetch_array($result))
 		{
@@ -86,7 +86,7 @@ if(isset($_POST['submit']))
             <td width="9%" class="style5">&nbsp;</td>
           </tr>
           <?
-	   	$query = "SELECT * FROM menu order by type, disporder";
+	   	$query = "SELECT * FROM menu order by disporder";
 		$result = mysql_query($query);
 		while($rowApps1 = mysql_fetch_object($result))
 		{
@@ -151,7 +151,7 @@ if($mid != '')
           <div align="center" class="style3">
           <p>Ordering Restaurant Catering Online</p>
           <p> All Rights Reserved &copy; 2015 Ordering Restaurant Catering Online </p>
-          </div></td>
+        </div></td>
       </tr>
 </table>
 </body>

@@ -5,7 +5,7 @@ $id=$_SESSION["userid"];
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>HalfMoon Restaurant Catering Service</title>
+<title>Catering.com</title>
 <meta charset="utf-8">
 <link rel="stylesheet" href="css/reset.css" type="text/css" media="screen">
 <link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
@@ -28,7 +28,7 @@ $id=$_SESSION["userid"];
   <div class="row-top">
     <div class="main">
       <div class="wrapper">
-        <h1><a href="index.php">HalfMoon</a></h1>
+        <h1><a href="index.php">Catering<span>.com</span></a></h1>
         <nav>
           <ul class="menu">
            <li><a  href="index.php">Home</a></li>
@@ -54,7 +54,7 @@ $id=$_SESSION["userid"];
   <div class="row-bot">
     <div class="row-bot-bg">
       <div class="main">
-        <h2>HalfMoon Restaurant Catering Service</h2>
+        <h2>Ordering Restaurant Catering Online</h2>
       </div>
     </div>
   </div>
@@ -74,9 +74,9 @@ $id=$_SESSION["userid"];
           <p>Kuala Lumpur, Malaysia </p>
           <dl>
             <dd>&nbsp;</dd>
-            <dd><span>Telephone:</span> +60173107162</dd>
+            <dd><span>Telephone:</span> +60142225552 </dd>
             <dd>&nbsp;</dd>
-            <dd><span>Email:</span><a class="color-2" href="#"> abdo-123456@hotmail.com</a></dd>
+            <dd><span>Email:</span><a class="color-2" href="#"> moteeb@hotmail.com</a></dd>
           </dl>
         </div>
       </article>

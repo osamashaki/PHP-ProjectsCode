@@ -6,7 +6,7 @@ $id=$_SESSION["userid"];
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Restaurant Catering Service</title>
+<title>Ordering Restaurant Catering Online</title>
 <meta charset="utf-8">
 <link rel="stylesheet" href="css/reset.css" type="text/css" media="screen">
 <link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
@@ -21,7 +21,6 @@ $id=$_SESSION["userid"];
 <script src="js/jquery.easing.1.3.js" type="text/javascript"></script>
 <script src="js/jquery.equalheights.js" type="text/javascript"></script>
 <!--[if lt IE 9]><script type="text/javascript" src="js/html5.js"></script><![endif]-->
-
 </head>
 <body id="page1">
 <!--==============================header=================================-->
@@ -29,7 +28,7 @@ $id=$_SESSION["userid"];
   <div class="row-top">
     <div class="main">
       <div class="wrapper">
-        <h1><a href="index.php">HalfMoon</a></h1>
+        <h1><a href="index.php">Catering<span>.com</span></a></h1>
         <nav>
           <ul class="menu">
             <li><a class="active" href="index.php">Home</a></li>
@@ -56,7 +55,7 @@ $id=$_SESSION["userid"];
   <div class="row-bot">
     <div class="row-bot-bg">
       <div class="main">
-        <h2>HalfMoon Restaurant Catering Service<span></span></h2>
+        <h2>Ordering Restaurant Catering Online<span></span></h2>
         <div class="slider-wrapper">
           <div class="slider">
             <ul class="items">
@@ -75,12 +74,7 @@ $id=$_SESSION["userid"];
 <section id="content">
   <div class="main">
 <div class="wrapper img-indent-bot">
-      <article class="col-1"> 
-	  <a href="review.php">
-	  
-	  <img src="images/reviewlink.jpg" alt="" width="290" height="149" border="0" class="img-border">
-	  
-	  </a> </article>
+      <article class="col-1"> <a href="review.php"><img src="images/reviewlink.jpg" alt="" width="290" height="149" border="0" class="img-border"></a> </article>
       <article class="col-1"><a href="menu.php"><img src="images/Untitled.png" alt="image" width="311" height="171" border="0"></a></article>
   <article class="col-2"><a href="order.php"><img src="images/images.jpg" alt="image" width="310" height="170" border="0"></a> </article>
   </div>
@@ -119,7 +113,7 @@ $(window).load(function () {
         duration: 1000,
         easing: 'easeOutQuint',
         preset: 'slideDown',
-        slideshow: 1000,
+        slideshow: 7000,
         banners: false,
         pauseOnHover: true,
         pagination: true,

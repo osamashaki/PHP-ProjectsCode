@@ -105,7 +105,7 @@ include("../connected.php");
 						$name = $data[0];			
 				 ?>
 				 
-		<table width="100%" border="0" cellpadding="2" cellspacing="0" bordercolor="#CCCCCC">
+		<table width="100%" border="0" align="center" cellpadding="2" cellspacing="0" bordercolor="#CCCCCC">
           
            <form action="orders.php?staid=<? echo $id ?>" method="post">
 		    <tr>
@@ -407,7 +407,7 @@ if($proid != '')
           <div align="center" class="style3">
           <p>Ordering Restaurant Catering Online</p>
           <p> All Rights Reserved &copy; 2015 Ordering Restaurant Catering Online </p>
-          </div></td>
+        </div></td>
       </tr>
 </table>
 </body>

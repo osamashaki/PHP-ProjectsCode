@@ -115,7 +115,7 @@ if($mid != '')
           <div align="center" class="style3">
           <p>Ordering Restaurant Catering Online</p>
           <p> All Rights Reserved &copy; 2015 Ordering Restaurant Catering Online </p>
-          </div></td>
+        </div></td>
       </tr>
 </table>
 </body>

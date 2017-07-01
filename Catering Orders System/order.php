@@ -154,7 +154,7 @@ function change()
   <div class="row-top">
     <div class="main">
       <div class="wrapper">
-        <h1><a href="index.php">HalfMoon</a></h1>
+        <h1><a href="index.php">Catering<span>.com</span></a></h1>
         <nav>
           <ul class="menu">
              <li><a href="index.php">Home</a></li>
@@ -180,7 +180,7 @@ function change()
   <div class="row-bot">
     <div class="row-bot-bg">
       <div class="main">
-        <h2>HalfMoon Restaurant Catering Service</h2>
+        <h2>Ordering Restaurant Catering Service</h2>
       </div>
     </div>
   </div>
@@ -460,20 +460,7 @@ function change()
                                                   <td width="142" rowspan="3"><div align="center"><? echo "<img src=\"" . $dir . $photo_path . "\"border=\"0\" alt=\"\" width =140 height=130>"; ?></div>
                                                   <div align="center"></div></td>
                                                   <td width="489" height="38" valign="top"><div align="left"><strong> Meal: <? echo $name; ?> </strong></div></td>
-                                                  <td width="62" valign="top"><div align="center">
-                                                  <select name ="num">
-                                                    <option>--</option>
-                                                  <option>1</option>
-                                                  <option>2</option>
-                                                  <option>3</option>
-                                                  <option>4</option>
-                                                  <option>5</option>
-                                                  <option>10</option>
-
-                                                  </select>
-                                                  
-                                                  
-                                                  </div></td>
+                                                  <td width="62" valign="top"><div align="center"></div></td>
                                                 </tr>
                                                 <tr>
                                                   <td height="38" valign="top"><div align="left"><strong>Meal Description: </strong><strong><? echo $description ?></strong></div></td>
@@ -573,7 +560,13 @@ function change()
 			   
 			   ?> 
 			    <tr>
-                  <td width="221" rowspan="2"><div align="center">
+                <td width="32" rowspan="3" valign="middle">
+                <div align="center">
+                <input type="checkbox" name="food[]" value="<? echo $id; ?>" />
+                </div>
+                </td>
+                
+                <td width="221" rowspan="2"><div align="center">
 				   <? 
 				  if($photo_path == "")
 				  {
@@ -588,16 +581,7 @@ function change()
                   <td height="42" valign="top"><strong><span class="style2">Meal:</span> <? echo $name; ?> </strong>
                   </td>
                   <td></td>
-                   <td><select name ="num">
-                                                  <option>--</option>
-                                                  <option>1</option>
-                                                  <option>2</option>
-                                                  <option>3</option>
-                                                  <option>4</option>
-                                                  <option>5</option>
-                                                  <option>10</option>
-
-                                                  </select></td>
+                   <td>&nbsp;</td>
                 </tr>
                 <tr>
                   <td colspan="2" valign="top"><span class="style2"><strong>Meal Description:</strong></span><strong> <span class="extra-wrap"><? echo $description ?> </span></strong></td>
@@ -637,6 +621,11 @@ function change()
 			   
 			   ?> 
 			    <tr>
+                <td width="32" rowspan="3" valign="middle">
+                <div align="center">
+                <input type="checkbox" name="food[]" value="<? echo $id; ?>" />
+                </div>
+                </td>
                   <td width="221" rowspan="2"><div align="center">
 				   <? 
 				  if($photo_path == "")
@@ -652,16 +641,7 @@ function change()
                   <td height="42" valign="top"><strong><span class="style2">Meal:</span> <? echo $name; ?> </strong>
                   </td>
                   <td></td>
-                   <td><select name ="num">
-                                                  <option>--</option>
-                                                  <option>1</option>
-                                                  <option>2</option>
-                                                  <option>3</option>
-                                                  <option>4</option>
-                                                  <option>5</option>
-                                                  <option>10</option>
-
-                                                  </select></td>
+                   <td>&nbsp;</td>
                 </tr>
                 <tr>
                   <td colspan="2" valign="top"><span class="style2"><strong>Meal Description:</strong></span><strong> <span class="extra-wrap"><? echo $description ?> </span></strong></td>

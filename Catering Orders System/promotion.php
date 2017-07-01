@@ -6,7 +6,7 @@ $id=$_SESSION["userid"];
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>HalfMoon Restaurant Catering Service</title>
+<title>Ordering Restaurant Catering Online</title>
 <meta charset="utf-8">
 <link rel="stylesheet" href="css/reset.css" type="text/css" media="screen">
 <link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
@@ -50,7 +50,7 @@ $(document).ready(function () {
   <div class="row-top">
     <div class="main">
       <div class="wrapper">
-        <h1><a href="index.php">HalfMoon</a></h1>
+        <h1><a href="index.php">Catering<span>.com</span></a></h1>
         <nav>
           <ul class="menu">
             <li><a  href="index.php">Home</a></li>
@@ -76,7 +76,7 @@ $(document).ready(function () {
   <div class="row-bot">
     <div class="row-bot-bg">
       <div class="main">
-        <h2>HalfMoon Restaurant Catering Service</h2>
+        <h2>Ordering Restaurant Catering Online</h2>
       </div>
     </div>
   </div>

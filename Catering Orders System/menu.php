@@ -6,7 +6,7 @@ $id=$_SESSION["userid"];
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>HalfMoon Restaurant Catering Service</title>
+<title>Ordering Restaurant Catering Online</title>
 <meta charset="utf-8">
 <link rel="stylesheet" href="css/reset.css" type="text/css" media="screen">
 <link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
@@ -45,7 +45,7 @@ $(document).ready(function () {
   <div class="row-top">
     <div class="main">
       <div class="wrapper">
-        <h1><a href="index.php">HalfMoon</a></h1>
+        <h1><a href="index.php">Catering<span>.com</span></a></h1>
         <nav>
           <ul class="menu">
             <li><a  href="index.php">Home</a></li>
@@ -71,7 +71,7 @@ $(document).ready(function () {
   <div class="row-bot">
     <div class="row-bot-bg">
       <div class="main">
-        <h2>HalfMoon Restaurant Catering Service</h2>
+        <h2>Ordering Restaurant Catering Online<span></span></h2>
       </div>
     </div>
   </div>
@@ -84,13 +84,19 @@ $(document).ready(function () {
         <div class="indent-left">
           <div class="img-indent-bot">
             <h3 align="left" class="prev-indent-bot">Our Menu </h3>
-           
-            <table width="100%" border="1" align="center">
+            <td>
+			<table width="200" border="1" align="right">
               <tr>
-                <td width="50%"><h2 style="color:#333333">Lunch</h2>
-                
-			  <table border="2" align="center" cellpadding="2" cellspacing="2">
-			    <?
+              <td> <input name="order" type="button" id="order" onClick="window.location.href='order.php'" value="Order Now" class="button-1" /> </td> 
+              </tr>
+            </table></td>
+            <div class="wrapper img-indent-bot">
+              <figure class="img-indent"></figure>
+			  
+			  
+			  <h2 style="color:#333333">Lunch</h2>
+			  <table width="1086" border="2" align="center" cellpadding="2" cellspacing="2">
+               <?
 			   		$dir = "admin/thumbs/";
 					include("connected.php");
 			    	$query = "SELECT * FROM menu where type='L' order by disporder asc";
@@ -106,8 +112,8 @@ $(document).ready(function () {
 			
 			   
 			   ?> 
-			    <tr>
-                  <td width="221" rowspan="2"><div align="center">
+				<tr>
+                  <td width="222" rowspan="2"><div align="center">
 				   <? 
 				  if($photo_path == "")
 				  {
@@ -126,11 +132,11 @@ $(document).ready(function () {
                 </tr>
                 <tr>
                   <td>&nbsp;</td>
-                  <td width="365"><div align="right"></div></td>
-                  <td width="470"></td>
+                  <td width="699"><div align="right"></div></td>
+                  <td width="137"></td>
                 </tr>
                 <tr>
-                  <td colspan="3"><div align="left" class="style2"><hr width="55%" color="#FF6600" /></div></td>
+                  <td colspan="3"><div align="left" class="style2"><hr width="67%" color="#FF6600" /></div></td>
                 </tr>
 				 <tr>
                   <td colspan="3">&nbsp;</td>
@@ -138,16 +144,10 @@ $(document).ready(function () {
 				<?
 				}
 				?>
-            </table></td>
-                <td width="50%"><blockquote>
-                  <blockquote>
-                    <blockquote>
-                      <h2 style="color:#333333">Dinner</h2>
-                    </blockquote>
-                  </blockquote>
-                </blockquote>
-			  <table border="2" align="center" cellpadding="2" cellspacing="2">
-			    <?
+              </table>
+			  <h2 style="color:#333333">Dinner</h2>
+			  <table width="1086" border="2" align="center" cellpadding="2" cellspacing="2">
+               <?
 			   		$dir = "admin/thumbs/";
 					include("connected.php");
 			    	$query = "SELECT * FROM menu where type='D' order by disporder asc";
@@ -163,69 +163,8 @@ $(document).ready(function () {
 			
 			   
 			   ?> 
-			    <tr>
-			      <td width="222" rowspan="2"><div align="center">
-			        <? 
-				  if($photo_path == "")
-				  {
-				  	echo "<img src='images/magnify.png' width =160 height=150>"; 
-				  }
-				  else
-				  {
-				  	echo "<img src=\"" . $dir . $photo_path . "\"border=\"0\" alt=\"\" width =160 height=150>"; 
-				  }
-				?>
-			        </div></td>
-			      <td height="42" colspan="2" valign="top"><strong><span class="style2">Meal:</span> <? echo $name; ?> </strong></td>
-			      </tr>
-			    <tr>
-			      <td colspan="2" valign="top"><span class="style2"><strong>Meal Description:</strong></span><strong> <span class="extra-wrap"><? echo $description ?> </span></strong></td>
-			      </tr>
-			    <tr>
-			      <td>&nbsp;</td>
-			      <td width="699"><div align="right"></div></td>
-			      <td width="137"></td>
-			      </tr>
-			    <tr>
-			      <td colspan="3"><div align="left" class="style2"><hr width="67%" color="#FF6600" /></div></td>
-			      </tr>
-			    <tr>
-			      <td colspan="3">&nbsp;</td>
-			      </tr>
-			    <?
-				}
-				?>
-			    </table>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                <blockquote>
-                  <blockquote>
-                    <blockquote>
-                      <h2 style="color:#333333">Drinks</h2>
-                    </blockquote>
-                  </blockquote>
-                </blockquote>
-                <table border="2" align="center" cellpadding="2" cellspacing="2">
-			    <?
-			   		$dir = "admin/thumbs/";
-					include("connected.php");
-			    	$query = "SELECT * FROM menu where type='dr' order by disporder asc";
-					$result = mysql_query($query);
-					while($rowApps1 = mysql_fetch_object($result))
-					{
-						$id    		 	 = $rowApps1->meal_id;
-						$price    	     = $rowApps1->meal_price;
-						$name			 = $rowApps1->meal_name;
-						$description     = $rowApps1->meal_desc;
-						$photo_path		 = $rowApps1->photo_path;
-						
-			
-			   
-			   ?> 
-			    <tr>
-                  <td width="221" rowspan="2"><div align="center">
+				<tr>
+                  <td width="222" rowspan="2"><div align="center">
 				   <? 
 				  if($photo_path == "")
 				  {
@@ -244,11 +183,11 @@ $(document).ready(function () {
                 </tr>
                 <tr>
                   <td>&nbsp;</td>
-                  <td width="365"><div align="right"></div></td>
-                  <td width="470"></td>
+                  <td width="699"><div align="right"></div></td>
+                  <td width="137"></td>
                 </tr>
                 <tr>
-                  <td colspan="3"><div align="left" class="style2"><hr width="55%" color="#FF6600" /></div></td>
+                  <td colspan="3"><div align="left" class="style2"><hr width="67%" color="#FF6600" /></div></td>
                 </tr>
 				 <tr>
                   <td colspan="3">&nbsp;</td>
@@ -256,79 +195,8 @@ $(document).ready(function () {
 				<?
 				}
 				?>
-            </table>
-                </td>
-                <td><blockquote>
-                  <blockquote>
-                    <blockquote>
-                      <h2 style="color:#333333">Desert</h2>
-                    </blockquote>
-                  </blockquote>
-                </blockquote>
-                <table border="2" align="center" cellpadding="2" cellspacing="2">
-			    <?
-			   		$dir = "admin/thumbs/";
-					include("connected.php");
-			    	$query = "SELECT * FROM menu where type='des' order by disporder asc";
-					$result = mysql_query($query);
-					while($rowApps1 = mysql_fetch_object($result))
-					{
-						$id    		 	 = $rowApps1->meal_id;
-						$price    	     = $rowApps1->meal_price;
-						$name			 = $rowApps1->meal_name;
-						$description     = $rowApps1->meal_desc;
-						$photo_path		 = $rowApps1->photo_path;
-						
-			
-			   
-			   ?> 
-			    <tr>
-                  <td width="221" rowspan="2"><div align="center">
-				   <? 
-				  if($photo_path == "")
-				  {
-				  	echo "<img src='images/magnify.png' width =160 height=150>"; 
-				  }
-				  else
-				  {
-				  	echo "<img src=\"" . $dir . $photo_path . "\"border=\"0\" alt=\"\" width =160 height=150>"; 
-				  }
-				?>
-				  </div></td>
-                  <td height="42" colspan="2" valign="top"><strong><span class="style2">Meal:</span> <? echo $name; ?> </strong></td>
-                </tr>
-                <tr>
-                  <td colspan="2" valign="top"><span class="style2"><strong>Meal Description:</strong></span><strong> <span class="extra-wrap"><? echo $description ?> </span></strong></td>
-                </tr>
-                <tr>
-                  <td>&nbsp;</td>
-                  <td width="365"><div align="right"></div></td>
-                  <td width="470"></td>
-                </tr>
-                <tr>
-                  <td colspan="3"><div align="left" class="style2"><hr width="55%" color="#FF6600" /></div></td>
-                </tr>
-				 <tr>
-                  <td colspan="3">&nbsp;</td>
-                </tr>
-				<?
-				}
-				?>
-            </table>
-                
-                </td>
-                 
-                
-              </tr>
-            </table>
-            <p align="left">&nbsp;</p>
-            <td>
-			<table width="200" border="1" align="right">
-              <tr>
-              <td>&nbsp;</td> 
-              </tr>
-            </table></td>
-            <div class="wrapper img-indent-bot"></div>
+              </table>
+            </div>
           </div>
           <h3 class="p1">&nbsp;</h3>
         </div>

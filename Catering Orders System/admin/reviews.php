@@ -125,7 +125,7 @@ if($mid != '')
       </tr>
       <tr>
         <td height="30" colspan="2" valign="middle" bgcolor="#FFFFFF"><div align="center" class="style3">
-          <p>&nbsp;</p>
+          <p>Ordering Restaurant Catering Online</p>
           <p> All Rights Reserved &copy; 2015 Ordering Restaurant Catering Online </p>
         </div></td>
       </tr>
