@@ -135,7 +135,7 @@ a:active {
       <tr>
         <td height="30" colspan="2" valign="middle" bgcolor="#FFFFFF"><div align="center" class="style3">
           <p>Dental Online System</p>
-          <p> All Rights Reserved &copy; 2012 DOS SYSTEM </p>
+          <p> All Rights Reserved &copy; 2015 DOS SYSTEM </p>
         </div></td>
       </tr>
 </table>

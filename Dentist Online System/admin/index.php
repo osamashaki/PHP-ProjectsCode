@@ -52,7 +52,7 @@ body {
 					
 					
 					$data = mysql_fetch_array(mysql_query("SELECT id,name FROM admin WHERE email='$username' AND password='$password'"));
-					$_SESSION["userid"] = $data[0];
+					$_SESSION["adminid"] = $data[0];
 					$_SESSION["name"] = $data[1];
 					$_SESSION["admin_logged_in"] = "YES";
 					$pid= $data[0];

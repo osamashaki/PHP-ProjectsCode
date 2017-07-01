@@ -15,7 +15,10 @@
 .style7 {color: #FF0000}
 -->
 </style>
-<script type="text/javascript" src="stmenu.js"></script></head>
+<script type="text/javascript" src="stmenu.js"></script>
+<script language="JavaScript" src="calendar_us.js"></script>
+	<link rel="stylesheet" href="calendar.css">
+</head>
 <body>
 <div id="container">
   <div id="banner">
@@ -131,13 +134,13 @@ if(isset($_POST["submit"]))
 }
 ?>
 </center>
-    <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
+    <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" name="form1">
     <table width="500" border="0" cellpadding="0" cellspacing="2">
       <tr>
         <td height="30" colspan="2" class="page_heading"> Members Registration</td>
       </tr>
       <tr>
-        <td colspan="2">&nbsp;</td>
+        <td colspan="2"><span class="form_label_right"><span class="style7">*</span> Required fields</span></td>
       </tr>
       
       <tr>
@@ -176,14 +179,21 @@ if(isset($_POST["submit"]))
 
       <tr>
         <td>Date of birth: </td>
-        <td><input name="dob" type="text" size="9" />  </td>
+        <td><input name="timestamp" type="text" size="9" />
+            <script language="JavaScript">
+			new tcal ({
+				// form name
+				'formname': 'form1',
+				// input name
+				'controlname': 'timestamp'
+			});
+
+			</script>		  </td>
       </tr>
       <tr>
         <td> Country: </td>
         <td><select name="country" size="1">
-            <option value="Afghanistan">Afghanistan</option>
-          <option value="&Atilde;&hellip;land Islands">&Atilde;&hellip;land Islands</option>
-          <option value="Albania">Albania</option>
+<option value="Albania">Albania</option>
           <option value="Algeria">Algeria</option>
           <option value="American Samoa">American Samoa</option>
           <option value="Andorra">Andorra</option>
@@ -439,7 +449,7 @@ if(isset($_POST["submit"]))
     <p>&nbsp;</p>
   </div>
   <div id="footer"> 
-    <div align="center">Dental Online System - All Rights Reserved &copy; 2012 DOS SYSTEM<br/>
+    <div align="center">Dental Online System - All Rights Reserved &copy; 2015 DOS SYSTEM<br/>
     </div>
   </div>
 </div>

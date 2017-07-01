@@ -196,7 +196,7 @@ else
     </table>
     </div>
   <div id="footer"> 
-    <div align="center">Dental Online System - All Rights Reserved &copy; 2012 DOS SYSTEM <br/>
+    <div align="center">Dental Online System - All Rights Reserved &copy; 2015 DOS SYSTEM <br/>
     </div>
   </div>
 </div>

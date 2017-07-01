@@ -145,7 +145,7 @@ if(isset($_POST["send"]))
   </div>
   <div id="footer"> 
     <div align="center">
-      <p>Dental Online System - All Rights Reserved &copy; 2012 DOS SYSTEM      </p>
+      <p>Dental Online System - All Rights Reserved &copy; 2015 DOS SYSTEM      </p>
     </div>
   </div>
 </div>

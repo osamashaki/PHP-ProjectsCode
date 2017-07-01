@@ -102,13 +102,12 @@
 				$_SESSION["name"] = $data[1];
 				$_SESSION["logged"] = "YES";
 				$pid= $data[0];
-				
-				echo "<center> Welcome  "  .$_SESSION["name"]. "<br/><br/>"; 
+				$loggeduser =  $data[1]; echo "Welcome  "  .$loggeduser. "<br/><br/>"; 
 				
 				
 				echo "<a href='profile.php?id=$pid'>My Profile</a><br/><br/>";
 				
-				echo "<a href=logout.php>Logout</a></center>";
+				echo "<a href=logout.php>Logout</a>";
  
 			
 			}	
@@ -139,7 +138,7 @@ else
         <td><input name="login" type="submit" id="login" style="background-color:#6CA5C2" value="Login" /></td>
       </tr>
       <tr>
-        <td colspan="2"><a href="fpass.php"><strong>Forget Password </strong></a></td>
+        <td colspan="2"><a href="#"><strong>Forget Password </strong></a></td>
       </tr>
     </table>
 	</form>
@@ -151,44 +150,62 @@ else
   </div>
 
   <div id="content">
-    <h1>Treatments Offered </h1>
-    
-    <p>At Our Dental Clinic we provide the following treatments:</p>
-    <table width="100%" height="300" border="0">
+    <h1>contact us </h1>
+<?			
+if(isset($_POST["send"])) 
+{
+		$name = $_POST["name"]; 
+		$mobile = $_POST["mobile"];
+		$email = $_REQUEST["email"];
+		$message = $_REQUEST["message"];
+		$sendDate = date('d-m-Y'); 
+		
+		include("connected.php");
+		if(empty($name) || empty($email) || empty($message) )
+		{
+			echo "<br/><center><h4 style='color:#FF0000'>Please enter your name, email and your message! Thank you.</h4></center>";
+		}
+		else
+		{
+		    mysql_query("INSERT INTO message  VALUES ('','$name','$mobile','$email','$message','$sendDate','')");
+			echo "<center><h4 style='color:#FF0000'>Thank you for contacting us. We will contact you soon.</h4></center>";
+		}
+		
+}
+?>		
+    <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
+    <table width="500" border="0" cellpadding="2" cellspacing="2">
+
       <tr>
-        <td><table width="500" border="0" align="center" cellpadding="1" cellspacing="3" bordercolor="#E0DFE3">
-          <tbody>
-            <tr>
-              <td bgcolor="#FF9900"><span class="style6">Cosmetic dentistry (e.g. teeth whitening, crowning, etc)</span></td>
-            </tr>
-            <tr>
-              <td bgcolor="#FF9900" class="style6">Periodontics (gum treatment)</td>
-            </tr>
-            <tr>
-              <td bgcolor="#FF9900" class="style6">Endodontics (root canal therapy)</td>
-            </tr>
-            <tr>
-              <td bgcolor="#FF9900" class="style6">Preventive treatments &ndash; fissure sealant, fluoride treatment</td>
-            </tr>
-            <tr>
-              <td bgcolor="#FF9900" class="style6">General dental treatment</td>
-            </tr>
-            <tr>
-              <td bgcolor="#FF9900" class="style6">Prosthetic&nbsp;treatment (dentures, or gigi palsu)</td>
-            </tr>
-            <tr>
-              <td bgcolor="#FF9900" class="style6">Minor Oral surgery</td>
-            </tr>
-            <tr>
-              <td bgcolor="#FF9900" class="style6">Restorative treatment</td>
-            </tr>
-            <tr>
-              <td bgcolor="#FF9900" class="style6">Orthodontics (braces)</td>
-            </tr>
-          </tbody>
-        </table></td>
+        <td colspan="2">&nbsp;</td>
+      </tr>
+     
+      <tr>
+        <td width="25%" class="form_label_right"><span class="required">*</span> Your Name: </td>
+        <td width="75%"><input name="name" type="text" id="name" size="40" /></td>
+      </tr>
+      <tr>
+        <td class="form_label_right">Your Mobile: </td>
+        <td><input name="mobile" type="text" id="mobile" size="40" /></td>
+      </tr>
+      <tr>
+        <td class="form_label_right"><span class="required">*</span>Your Email: </td>
+        <td><input name="email" type="text" id="email" size="40" /></td>
+      </tr>
+      <tr>
+        <td class="form_label_right"><span class="required">*</span>Your Message: </td>
+        <td><textarea name="message" cols="40" rows="4" id="message"><?php echo $comments;?></textarea></td>
+      </tr>
+      <tr>
+        <td colspan="2">&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td><input name="send" type="submit" id="send" value="Send" /></td>
       </tr>
     </table>
+	</form>
+    <p>&nbsp;</p>
     <p>&nbsp;</p>
     <p align="center">&nbsp;</p>
   </div>

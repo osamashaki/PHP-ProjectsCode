@@ -1,3 +1,6 @@
+<?
+session_start();
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -66,95 +69,75 @@
     </p>
     <hr color="#FF9900"/>
     </p>
-	
-	 <? if (isset($_POST['login']))
-	 { 	
-	 	error_reporting(0);
-		include("connected.php");
-		$username = $_POST['username'];
-		$password = $_POST['password'];
-		if(empty($username) || empty($password)) 
-		{
-			
-			echo "<center>Username / Password are required fields!<br/><br/>";
-			echo "<a href='index.php'>Back</a></center>"; 
-		} 
-		else 
-		{
-			
-			$sql="SELECT COUNT(*) AS total FROM patient WHERE email='$username' and password='$password' ";	
-			$result=mysql_query($sql);
-			$row = mysql_fetch_array($result);
-			$count = $row['total'];
-			if ($count==0) 
-			{
-				
-				echo "<center>Invalid Username / Password!<br/><br/>";
-				echo "<a href='index.php'>Back</a></center>"; 
-			} 
-			else 
-			{
-				# get user details and store in session and redirect to user home page.
-				session_start();
-				
-				$data = mysql_fetch_array(mysql_query("SELECT id,name FROM patient WHERE email='$username' AND password='$password'"));
-				$_SESSION["userid"] = $data[0];
-				$_SESSION["name"] = $data[1];
-				$_SESSION["logged"] = "YES";
-				$pid= $data[0];
-				$loggeduser =  $data[1]; echo "Welcome  "  .$loggeduser. "<br/><br/>"; 
-				
-				
-				echo "<a href='profile.php?id=$pid'>My Profile</a><br/><br/>";
-				
-				echo "<a href=logout.php>Logout</a>";
- 
-			
-			}	
-		}
-}
-else
-{
-?>
-	
-    <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
-	<table width="100%" border="1" style="border-style:dotted">
-      <tr>
-        <td colspan="2"><span class="style5">LogIn: </span></td>
-      </tr>
-      <tr>
-        <td colspan="2"><strong>Please enter Username and Password: </strong></td>
-      </tr>
-      <tr>
-        <td width="27%"><div align="left"><strong>Email:</strong></div></td>
-        <td><input name="username" type="text" id="username" /></td>
-      </tr>
-      <tr>
-        <td><div align="left"><strong>Password:</strong></div></td>
-        <td><input name="password" type="password" id="password" /></td>
-      </tr>
-      <tr>
-        <td>&nbsp;</td>
-        <td><input name="login" type="submit" id="login" style="background-color:#6CA5C2" value="Login" /></td>
-      </tr>
-      <tr>
-        <td colspan="2"><a href="#"><strong>Forget Password </strong></a></td>
-      </tr>
-    </table>
-	</form>
-<?
-}
-?> 
     <p>&nbsp;</p>
     <p>&nbsp;</p>
   </div>
 
   <div id="content">
-    <h1>about us </h1>
-    
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p align="center">&nbsp;</p>
+    <h1>forgot password </h1>
+     <p>
+       <?  
+	$id = $_GET['id']; 
+	
+if(isset($_POST['submit'])) {
+
+	$id = $_GET['id']; echo $id;	
+	include("connected.php");
+	$password = $_POST['password'];
+	$repassword = $_POST['repassword'];
+	if(empty($password) || empty($repassword ))
+	{
+		
+		echo "<center><span style='color:#FF0000'>Please fill in the required fields correctly!</span></center>";
+	}
+	elseif($password!=$repassword)
+		{
+			
+			echo "<center><span style='color:#FF0000'>Passowrd does not match!</span></center>";
+		}
+	else 
+	{
+				$id =  $_SESSION["patid"]; echo $id;			
+				$sql = "update patient set password = '$password' where id = '$id' ";
+				mysql_query($sql);
+				echo "<center>Your password has been updated successfully</center>";	
+				$where = "index.php"; 
+				echo "<META HTTP-EQUIV=\"Refresh\" CONTENT=\"3;URL=$where\">"; 
+				
+				
+			}
+				
+	}
+	
+if(isset($_POST['cancel'])) 
+{
+	$where = "fpass.php"; 
+	echo "<META HTTP-EQUIV=\"Refresh\" CONTENT=\"1;URL=$where\">"; 		
+}
+?>
+     </p>
+     <p>&nbsp;</p>
+     <form id="form1" name="form1" method="post" action="changpass.php">
+       <table width="409" border="0" cellspacing="2">
+        <tr>
+          <td width="127"><span class="required">*</span> Password :</td>
+          <td width="266"><input name="password" type="password" id="password" size="20" /></td>
+        </tr>
+        <tr>
+          <td><span class="required">*</span>Confirm Password : </td>
+          <td><input name="repassword" type="password" id="repassword" size="20" /></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td><input name="submit" type="submit" id="submit" value="submit" />
+              <input name="cancel" type="submit" id="cancel" value="Cancel" /></td>
+        </tr>
+      </table>
+    </form>
   </div>
   <div id="footer"> 
     <div align="center">Dental Online System - All Rights Reserved &copy; 2015 DOS SYSTEM <br/>

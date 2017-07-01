@@ -15,6 +15,8 @@ include("connected.php");
 .style8 {color: #556C9A}
 -->
 </style>
+<script language="JavaScript" src="calendar_us.js"></script>
+	<link rel="stylesheet" href="calendar.css">
 </head>
 <body>
 <div id="container">
@@ -61,13 +63,14 @@ include("connected.php");
 		$pid= $_GET["id"];
     ?>
     </p>
-    <p><a href="profile.php?id=<? echo $pid; ?>"><strong>My Profile</strong></a>    </p>
-    <p><a href="apptmnt.php?id=<? echo $pid; ?>"><strong>My Appointments</strong></a></p>
-    <p><a href="trtment.php?id=<? echo $pid; ?>"><strong>My Treatments</strong></a></p>
-    <p><a href="payment.php?id=<? echo $pid; ?>"><strong>My Payments</strong></a></p>
-    <p><a href="pmsgs.php?id=<? echo $pid; ?>"><strong>My Messages</strong></a></p>
-    <p><a href="logout.php"><strong>Log out</strong></a></p>
-    <p>&nbsp;</p>
+    <table width="70%" align="center" cellspacing="2">
+    <tr><td align="left"> <a href="profile.php?id=<? echo $pid; ?>"><strong>My Profile</strong></a></td> </tr>
+    <tr><td align="left"><a href="apptmnt.php?id=<? echo $pid; ?>"><strong>My Appointments</strong></a></td> </tr>
+    <tr><td align="left"><a href="trtment.php?id=<? echo $pid; ?>"><strong>My Treatments</strong></a></td> </tr>
+    <tr><td align="left"><a href="payment.php?id=<? echo $pid; ?>"><strong>My Payments</strong></a></td> </tr>
+    <tr><td align="left"><a href="pmsgs.php?id=<? echo $pid; ?>"><strong>My Messages</strong></a></td> </tr>
+    <tr><td align="left"><a href="logout.php">Log out</a></td> </tr>
+    </table>
   </div>
   <div id="content">
     <?
@@ -87,7 +90,7 @@ include("connected.php");
 		$gender = $_POST['gender'];
 		$mobile = $_POST['mobile'];
 		$email = $_POST['email'];
-		$dob = $_POST['dob'];
+		$dob = $_POST['timestamp'];
 		$country = $_POST['country'];
 		$password = $_POST['password'];
 		$repassword = $_POST['repassword'];
@@ -112,7 +115,7 @@ include("connected.php");
 	else
 	{
 	?>
-    <form action="<?php echo $_SERVER['PHP_SELF'];?>?id=<?php echo $pid;?>" method="post">
+    <form action="<?php echo $_SERVER['PHP_SELF'];?>?id=<?php echo $pid;?>" method="post" name="form1">
     <table width="500" border="0" cellpadding="0" cellspacing="2">
       <tr>
         <td height="30" colspan="2"><h1>My Profile:</h1></td>
@@ -157,7 +160,17 @@ include("connected.php");
 
       <tr>
         <td class="form_label_right">Date of birth: </td>
-        <td><input name="dob" type="text" value="<? echo $dob;?>" size="12" /></td>
+        <td><input name="timestamp" type="text" size="9" value="<? echo $dob;?>" />
+            <script language="JavaScript">
+			new tcal ({
+				// form name
+				'formname': 'form1',
+				// input name
+				'controlname': 'timestamp'
+			});
+
+			</script>	
+        (mm/dd/yyyy)</td>
       </tr>
       <tr>
         <td> Country: </td>
@@ -423,7 +436,7 @@ include("connected.php");
     <p>&nbsp;</p>
   </div>
   <div id="footer"> 
-    <div align="center">Dental Online System - All Rights Reserved &copy; 2012 DOS SYSTEM <br/>
+    <div align="center">Dental Online System - All Rights Reserved &copy; 2015 DOS SYSTEM <br/>
     </div>
   </div>
 </div>

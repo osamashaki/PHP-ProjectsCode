@@ -63,13 +63,14 @@ include("connected.php");
 		$pid = $_GET["id"]; 
     ?>
     </p>
-    <p><a href="profile.php?id=<? echo $pid; ?>"><strong>My Profile</strong></a></p>
-    <p><a href="apptmnt.php?id=<? echo $pid; ?>"><strong>My Appointments</strong></a></p>
-    <p><a href="trtment.php?id=<? echo $pid; ?>"><strong>My Treatments</strong></a></p>
-    <p><a href="payment.php?id=<? echo $pid; ?>"><strong>My Payments</strong></a></p>
-    <p><a href="pmsgs.php?id=<? echo $pid; ?>">My Messages</a> </p>
-    <p><strong><a href="logout.php">Log out</a></strong></p>
-    <p>&nbsp;</p>
+    <table width="70%" align="center" cellspacing="2">
+    <tr><td align="left"> <a href="profile.php?id=<? echo $pid; ?>"><strong>My Profile</strong></a></td> </tr>
+    <tr><td align="left"><a href="apptmnt.php?id=<? echo $pid; ?>"><strong>My Appointments</strong></a></td> </tr>
+    <tr><td align="left"><a href="trtment.php?id=<? echo $pid; ?>"><strong>My Treatments</strong></a></td> </tr>
+    <tr><td align="left"><a href="payment.php?id=<? echo $pid; ?>"><strong>My Payments</strong></a></td> </tr>
+    <tr><td align="left"><a href="pmsgs.php?id=<? echo $pid; ?>"><strong>My Messages</strong></a></td> </tr>
+    <tr><td align="left"><a href="logout.php">Log out</a></td> </tr>
+    </table>
   </div>
   <div id="content">
     <h1><strong>My Appointments</strong></h1>
@@ -135,7 +136,7 @@ if(isset($_POST["send"]))
   </div>
   <div id="footer"> 
     <div align="center">
-      <p>Dental Online System - All Rights Reserved &copy; 2012 DOS SYSTEM      </p>
+      <p>Dental Online System - All Rights Reserved &copy; 2015 DOS SYSTEM      </p>
     </div>
   </div>
 </div>

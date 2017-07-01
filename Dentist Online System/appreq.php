@@ -68,13 +68,14 @@ include("connected.php");
 		
     ?>
     </p>
-    <p><a href="profile.php?id=<? echo $pid; ?>"><strong>My Profile</strong></a></p>
-    <p><a href="apptmnt.php?id=<? echo $pid; ?>"><strong>My Appointments</strong></a></p>
-    <p><a href="trtment.php?id=<? echo $pid; ?>"><strong>My Treatments</strong></a></p>
-    <p><a href="payment.php?id=<? echo $pid; ?>"><strong>My Payments</strong></a></p>
-    <p><a href="pmsgs.php?id=<? echo $pid; ?>"><strong>My Messages</strong></a></p>
-    <p><strong><a href="logout.php">Log out</a></strong></p>
-    <p>&nbsp;</p>
+    <table width="70%" align="center" cellspacing="2">
+    <tr><td align="left"> <a href="profile.php?id=<? echo $pid; ?>"><strong>My Profile</strong></a></td> </tr>
+    <tr><td align="left"><a href="apptmnt.php?id=<? echo $pid; ?>"><strong>My Appointments</strong></a></td> </tr>
+    <tr><td align="left"><a href="trtment.php?id=<? echo $pid; ?>"><strong>My Treatments</strong></a></td> </tr>
+    <tr><td align="left"><a href="payment.php?id=<? echo $pid; ?>"><strong>My Payments</strong></a></td> </tr>
+    <tr><td align="left"><a href="pmsgs.php?id=<? echo $pid; ?>"><strong>My Messages</strong></a></td> </tr>
+    <tr><td align="left"><a href="logout.php">Log out</a></td> </tr>
+    </table>
   </div>
   <div id="content">
     <h1><strong>Request an  Appointment</strong></h1>
@@ -100,15 +101,22 @@ include("connected.php");
 		if($myDate < $now )
 		{
 			echo "<h4 style='color:#FF0000'>Invalid date</h4>";
+			$where = "appreq.php?id=$pid"; 
+			echo "<META HTTP-EQUIV=\"Refresh\" CONTENT=\"2;URL=$where\">"; 
 		}
 		else if($myDate == $now  && $mytime < $timenow)
 		{
 			echo "<h4 style='color:#FF0000'>Invalid Time</h4>";
+			$where = "appreq.php?id=$pid"; 
+			echo "<META HTTP-EQUIV=\"Refresh\" CONTENT=\"2;URL=$where\">"; 
+			
 		}
 		
 		else if(empty($appdate) || empty($apptime) )
 		{
 			echo "<h4 style='color:#FF0000'>Please select data and time!</h4>";
+			$where = "appreq.php?id=$pid"; 
+			echo "<META HTTP-EQUIV=\"Refresh\" CONTENT=\"2;URL=$where\">"; 
 		}
 		
 		else
@@ -198,7 +206,7 @@ include("connected.php");
   </div>
   <div id="footer"> 
     <div align="center">
-      <p>Dental Online System - All Rights Reserved &copy; 2012 DOS SYSTEM      </p>
+      <p>Dental Online System - All Rights Reserved &copy; 2015 DOS SYSTEM      </p>
       </div>
   </div>
 </div>
